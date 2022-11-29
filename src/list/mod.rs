@@ -68,7 +68,7 @@
 //! - `statuses`
 
 use chrono;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 use crate::common::*;
 use crate::{auth, links, user};
@@ -136,7 +136,7 @@ impl ListID {
 /// * `user` is a mostly-populated `TwitterUser` corresponding to the creator of the list. If you
 ///   combine `user.screen_name` or `user.id` with `slug`, you can send them to `ListID::from_slug`
 ///   to make a `ListID` for the list.
-#[derive(Clone, Debug, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct List {
     ///The name of the list.
     pub name: String,

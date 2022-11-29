@@ -6,11 +6,11 @@ use crate::common::*;
 use crate::tweet;
 
 use chrono;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 use super::UserEntities;
 
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct RawTwitterUser {
     /// Indicates this user has an account with "contributor mode" enabled, allowing
     /// for Tweets issued by the user to be co-authored by another account. Rarely `true`.
